@@ -5,12 +5,14 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HomeComponent } from './pages/home/home.component';
 import { AmsHeaderComponent } from './shared/components/ams-header/ams-header.component';
+import { AmsSidebarComponent } from './shared/components/ams-sidebar/ams-sidebar.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
     AmsHeaderComponent,
+    AmsSidebarComponent,
   ],
   imports: [
     BrowserModule,

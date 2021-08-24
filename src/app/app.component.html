@@ -1,3 +1,7 @@
-This is app.component
-
-<router-outlet></router-outlet>
+<ams-header></ams-header>
+<div class="d-flex">
+    <app-ams-sidebar></app-ams-sidebar>
+    <main id="content">
+        <router-outlet></router-outlet>
+    </main>
+</div>
