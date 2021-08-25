@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { ListServiceService } from "../../services/lists/list-service.service";
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-lists',
@@ -7,16 +9,44 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ListsComponent implements OnInit {
 
-  constructor() { }
+  lists:object[] = []
 
-  lists = [
-    'Todo List',
-    'Shopping List',
-    'Watch List',
-    'Books to read'
-  ];
+  constructor(private listService: ListServiceService, private router: Router) 
+  { 
+
+  }
 
   ngOnInit(): void {
+    this.getUserLists();
+  }
+
+  /**
+   * Get all the users lists
+   * Returned lists are multidimentional arrays of objects. All active tasks
+   * are returned with the list under list.tasks
+   */
+  public getUserLists()
+  {
+    this.listService.userLists().subscribe(
+      result => {
+        this.lists = result;
+      },
+      error => {
+        
+      },() => {
+ 
+      }
+    );
+  }
+
+  /**
+   * Navigate to a single list view
+   * @param id 
+   * @returns 
+   */
+  public openList(id:number)
+  {
+    return this.router.navigateByUrl('/list/' + id);
   }
 
 }

@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule, HTTP_INTERCEPTORS} from '@angular/common/http';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
-import { AuthInterceptor } from './shared/auth.interceptor';
+import { AuthInterceptor } from './shared/interceptors/auth.interceptor';
 
 
 import { AppRoutingModule } from './app-routing.module';
@@ -12,7 +12,8 @@ import { AmsHeaderComponent } from './shared/components/ams-header/ams-header.co
 import { AmsSidebarComponent } from './shared/components/ams-sidebar/ams-sidebar.component';
 import { ListsComponent } from './shared/components/lists/lists.component';
 import { NotebooksComponent } from './shared/components/notebooks/notebooks.component';
-import { LoginComponent } from './pages/login/login/login.component';
+import { LoginComponent } from './pages/login/login.component';
+import { ListComponent } from './pages/list/list.component';
 
 @NgModule({
   declarations: [
@@ -23,6 +24,7 @@ import { LoginComponent } from './pages/login/login/login.component';
     ListsComponent,
     NotebooksComponent,
     LoginComponent,
+    ListComponent,
   ],
   imports: [
     BrowserModule,

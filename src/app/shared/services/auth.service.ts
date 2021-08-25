@@ -2,13 +2,6 @@ import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
 
-// User interface
-export class User {
-  name: String;
-  email: String;
-  password: String;
-  password_confirmation: String
-}
 
 @Injectable({
   providedIn: 'root'
@@ -16,7 +9,9 @@ export class User {
 
 export class AuthService {
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient) {
+
+  }
 
   // User registration
   register(user: User): Observable<any> {
@@ -33,4 +28,12 @@ export class AuthService {
     return this.http.get('http://ams-api.local/api/user');
   }
 
+}
+
+// User interface
+export class User {
+  name: String;
+  email: String;
+  password: String;
+  password_confirmation: String
 }

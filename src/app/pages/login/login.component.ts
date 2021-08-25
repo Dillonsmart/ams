@@ -12,7 +12,7 @@ import { AuthStateService } from '../../shared/services/auth-state.service';
 })
 
 export class LoginComponent implements OnInit {
-  
+
   loginForm: FormGroup;
   errors = null;
 
@@ -41,13 +41,13 @@ export class LoginComponent implements OnInit {
         },() => {
           this.authState.setAuthState(true);
           this.loginForm.reset()
-          this.router.navigate(['profile']);
+          this.router.navigate(['']);
         }
       );
   }
 
   // Handle response
-  responseHandler(data){
+  responseHandler(data: any){
     this.token.handleData(data.access_token);
   }
 

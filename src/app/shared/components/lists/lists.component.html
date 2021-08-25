@@ -1,11 +1,11 @@
 <p class="heading">Your Lists</p>
 <ul class="ams-lists">
-    <li *ngFor="let list of lists" class="d-flex justify-content-between">
+    <li *ngFor="let list of lists" (click)="openList(list['id'])" class="d-flex justify-content-between">
         <div>
-            <span class="name">{{ list }}</span>
+            <span class="name">{{ list['name'] }}</span>
         </div>
         <div>
-            <span class="count">0</span>
+            <span class="count">{{ list['tasks']['length'] }}</span>
             <span class="options"></span>
         </div>
     </li>
