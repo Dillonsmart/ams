@@ -1,0 +1,14 @@
+<p class="heading">Notebooks</p>
+<ul class="ams-lists">
+    <li *ngFor="let notebook of notebooks" class="d-flex justify-content-between">
+        <div>
+            <span class="name">{{ notebook }}</span>
+        </div>
+        <div>
+            <span class="options"></span>
+        </div>
+    </li>
+    <li class="create-item">
+        <span class="name">Create Notebook</span>
+    </li>
+</ul>

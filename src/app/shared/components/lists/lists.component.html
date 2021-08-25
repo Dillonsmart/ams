@@ -1,0 +1,15 @@
+<p class="heading">Your Lists</p>
+<ul class="ams-lists">
+    <li *ngFor="let list of lists" class="d-flex justify-content-between">
+        <div>
+            <span class="name">{{ list }}</span>
+        </div>
+        <div>
+            <span class="count">0</span>
+            <span class="options"></span>
+        </div>
+    </li>
+    <li class="create-item">
+        <span class="name">Create List</span>
+    </li>
+</ul>

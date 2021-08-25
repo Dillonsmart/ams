@@ -1,0 +1,119 @@
+.sidebar {
+    background: $lightGrey;
+    padding: 30px 10px 30px 35px;
+    position: fixed;
+    height: calc(100% - 43px);
+
+    .heading {
+        font-weight: 700;
+        padding-left: 10px;
+        margin: 0;
+    }
+
+    .defaults {
+
+        margin-bottom: 30px !important;
+
+        li {
+
+            .name {
+
+                &:before {
+                    content: '-' !important;
+                    background: none !important;
+                    padding: 0;
+                    margin: 0;
+                }
+
+            }
+            
+        }
+
+    }
+
+    .ams-lists {
+
+        padding: 0;
+        margin: 10px 0 10px 0;
+        list-style-type: none;
+
+        li {
+            border-radius: 3px;
+            padding: 7px 10px;
+            font-size: 14px;
+
+            .name {
+
+                &::before {
+                    content: '';
+                    display: inline-block;
+                    width: 12px;
+                    height: 12px;
+                    -moz-border-radius: 7.5px;
+                    -webkit-border-radius: 7.5px;
+                    border-radius: 7.5px;
+                    background-color: #b9b9b9;
+                    margin-right: 15px
+                }
+
+            }
+
+            .count {
+                color: $grey;
+                font-size: 12px;
+            }
+
+            .options {
+                display: none;
+            }
+
+            &:hover {
+                background: $lightDarkerGrey;
+                cursor: pointer;
+
+                .count {
+                    display: none;
+                }
+
+                .options {
+                    display: block;
+                }
+
+            }
+
+            &.create-item {
+                opacity: 0;
+            }
+
+        }
+
+        .create-item {
+            color: $red;
+            font-weight: 700;
+            transition: 0.1s;
+            -webkit-transition: opacity 0.1s ease-in;
+            -moz-transition: opacity 0.1s ease-in;
+            -o-transition: opacity 0.1s ease-in;
+
+            .name {
+
+                &::before {
+                    content: '+';
+                    display: inline-block;
+                    background: none;
+                    padding: 0 2px;
+                }
+
+            }
+
+        }
+
+        &:hover {
+            .create-item {
+                opacity: 1;
+            }
+        }
+
+    }
+
+}
