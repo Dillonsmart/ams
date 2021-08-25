@@ -1,5 +1,9 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { HttpClientModule, HTTP_INTERCEPTORS} from '@angular/common/http';
+import { ReactiveFormsModule, FormsModule } from '@angular/forms';
+import { AuthInterceptor } from './shared/auth.interceptor';
+
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -8,6 +12,7 @@ import { AmsHeaderComponent } from './shared/components/ams-header/ams-header.co
 import { AmsSidebarComponent } from './shared/components/ams-sidebar/ams-sidebar.component';
 import { ListsComponent } from './shared/components/lists/lists.component';
 import { NotebooksComponent } from './shared/components/notebooks/notebooks.component';
+import { LoginComponent } from './pages/login/login/login.component';
 
 @NgModule({
   declarations: [
@@ -17,12 +22,22 @@ import { NotebooksComponent } from './shared/components/notebooks/notebooks.comp
     AmsSidebarComponent,
     ListsComponent,
     NotebooksComponent,
+    LoginComponent,
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule,
+    ReactiveFormsModule,
+    FormsModule
   ],
-  providers: [],
+  providers: [
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: AuthInterceptor,
+      multi: true
+    }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
