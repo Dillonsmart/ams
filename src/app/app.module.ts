@@ -14,6 +14,8 @@ import { ListsComponent } from './shared/components/lists/lists.component';
 import { NotebooksComponent } from './shared/components/notebooks/notebooks.component';
 import { LoginComponent } from './pages/login/login.component';
 import { ListComponent } from './pages/list/list.component';
+import { TaskComponent } from './shared/components/tasks/task/task.component';
+import { TasksComponent } from './shared/components/tasks/tasks.component';
 
 @NgModule({
   declarations: [
@@ -25,6 +27,8 @@ import { ListComponent } from './pages/list/list.component';
     NotebooksComponent,
     LoginComponent,
     ListComponent,
+    TaskComponent,
+    TasksComponent,
   ],
   imports: [
     BrowserModule,
