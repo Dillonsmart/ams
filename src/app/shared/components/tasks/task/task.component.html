@@ -1,1 +1,12 @@
-<span class="task-name">{{task.name}}</span>
+<div class="d-flex p-1">
+    <div class="inline-block task--complete-check"></div>
+    <div class="inline-block task--content flex-fill">
+        <p class="name">{{task.name}}</p>
+        <p class="description">{{ (task.description.length > 100)? (task.description | slice:0:100)+'..':(task.description) }}</p>
+    </div>
+    <div class="inline-block task--options text-end flex-fill">
+        <button class="opt-btn">
+            <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 0 24 24" width="24px" fill="#000000"><path d="M0 0h24v24H0V0z" fill="none"/><path d="M6 10c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm12 0c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm-6 0c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2z"/></svg>
+        </button>
+    </div>
+</div>

@@ -1,8 +1,11 @@
 #leftMenu {
     width: 305px;
+    top: 43px;
 }
 
 #content {
     margin-left: 305px;
+    top: 43px;
+    position: relative;
     width: calc(100% - 305px);
 }

@@ -1,5 +1,13 @@
 <ul class="list-tasks">
+    <div class="text-center add-section" (click)="openNewTaskModal()">
+        <span>Add Task</span>
+    </div>
     <li *ngFor="let task of tasks">
         <app-task [task]="task"></app-task>
     </li>
+    <div class="text-center add-section">
+        <span>Add Task</span>
+    </div>
 </ul>
+
+<app-create-modal></app-create-modal>

@@ -19,14 +19,20 @@
             .name {
 
                 &:before {
-                    content: '-' !important;
+                    content: '' !important;
                     background: none !important;
                     padding: 0;
-                    margin: 0;
+                    margin: 0 !important;
+                    width: 4px !important;
+                    height: 0 !important;
                 }
 
             }
             
+            // svg {
+            //     fill: $grey;
+            // }
+
         }
 
     }

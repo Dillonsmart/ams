@@ -1,0 +1,10 @@
+<jw-modal id="createNewTaskModal">
+    <div class="form-group">
+        <input type="text" #tName placeholder="Task name" [(ngModel)]="taskName" tabindex="1"/>
+        <textarea placeholder="Description" [(ngModel)]="taskDescription" tabindex="2"></textarea>
+    </div>
+    <div class="foot text-end">
+        <button (click)="createTask();" class="save" tabindex="3">Add Task</button>
+        <button (click)="closeModal();" class="cancel" tabindex="4">Cancel</button>
+    </div>
+</jw-modal>

@@ -1,0 +1,98 @@
+﻿/* MODAL STYLES
+-------------------------------*/
+jw-modal {
+    /* modals are hidden by default */
+    display: none;
+
+    .jw-modal {
+        /* modal container fixed across whole screen */
+        position: fixed;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+
+        /* z-index must be higher than .jw-modal-background */
+        z-index: 1000;
+        
+        /* enables scrolling for tall modals */
+        overflow: auto;
+
+        .jw-modal-body {
+            border-radius: 3px;
+            background: #fff;
+
+            /* margin exposes part of the modal background */
+            margin: 120px auto 0 auto;
+            width: 100%;
+            max-width: 650px;
+            padding: 15px 0;
+
+            input {
+                border: 0;
+                background: 0;
+                padding: 5px 15px;
+                outline: 0;
+                width: 100%;
+                font-size: 16px;
+            }
+
+            textarea {
+                font-size: 14px;
+                resize: none;
+                padding: 5px 15px;
+                border: 0;
+                background: 0;
+                outline: 0;
+                width: 100%;
+            }
+
+            .foot {
+                padding: 15px 15px 0 15px;
+                border-top: 1px solid #f1f1f1;
+
+                button {
+
+                    padding: 5px 15px;
+                    font-size: 14px;
+
+                    &.save {
+                        background: #db4c3f;
+                        color: white;
+                        border: 1px solid #db4c3f;
+                    }
+
+                    &.cancel {
+                        background: white;
+                        border: #e9e9e9;
+                        color: #222;
+                    }
+
+                }
+
+            }
+
+        }
+    }
+
+    .jw-modal-background {
+        /* modal background fixed across whole screen */
+        position: fixed;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+
+        /* semi-transparent black  */
+        background-color: #000;
+        opacity: 0.45;
+        
+        /* z-index must be below .jw-modal and above everything else  */
+        z-index: 900;
+    }
+}
+
+body.jw-modal-open {
+    /* body overflow is hidden to hide main scrollbar when modal window is open */
+    overflow: hidden;
+}

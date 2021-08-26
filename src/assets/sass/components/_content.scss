@@ -11,4 +11,27 @@
 
     }
 
+    .section-options {
+
+        font-size: 12px;
+
+        button {
+            background: none;
+            border: 0;
+            border-radius: 3px;
+            margin-right: 10px;
+
+            &:last-child {
+                margin-right: 0;
+            }
+
+            &:hover {
+                cursor: pointer;
+                background: $lightDarkerGrey;
+            }
+
+        }
+
+    }
+
 }

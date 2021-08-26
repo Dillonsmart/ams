@@ -14,7 +14,6 @@ import { AuthStateService } from '../../shared/services/auth-state.service';
 export class LoginComponent implements OnInit {
 
   loginForm: FormGroup;
-  errors = null;
 
   constructor(
     public router: Router,
@@ -24,8 +23,8 @@ export class LoginComponent implements OnInit {
     private authState: AuthStateService,
   ) {
     this.loginForm = this.fb.group({
-      email: [],
-      password: []
+      email: null,
+      password: null
     })
   }
 
@@ -37,7 +36,7 @@ export class LoginComponent implements OnInit {
           this.responseHandler(result);
         },
         error => {
-          this.errors = error.error;
+
         },() => {
           this.authState.setAuthState(true);
           this.loginForm.reset()

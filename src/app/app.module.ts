@@ -16,6 +16,8 @@ import { LoginComponent } from './pages/login/login.component';
 import { ListComponent } from './pages/list/list.component';
 import { TaskComponent } from './shared/components/tasks/task/task.component';
 import { TasksComponent } from './shared/components/tasks/tasks.component';
+import { ModalModule } from './shared/components/modal';
+import { CreateModalComponent } from './shared/components/tasks/create-modal/create-modal.component';
 
 @NgModule({
   declarations: [
@@ -29,13 +31,15 @@ import { TasksComponent } from './shared/components/tasks/tasks.component';
     ListComponent,
     TaskComponent,
     TasksComponent,
+    CreateModalComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
     ReactiveFormsModule,
-    FormsModule
+    FormsModule,
+    ModalModule
   ],
   providers: [
     {

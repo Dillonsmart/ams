@@ -7,12 +7,14 @@
 // Layout
 
 // Components
-@import 'components/stuct.scss';
-@import 'components/header.scss';
-@import 'components/sidebar.scss';
-@import 'components/content.scss';
+@import 'components/stuct';
+@import 'components/header';
+@import 'components/sidebar';
+@import 'components/content';
+@import 'components/tasks';
+@import 'components/buttons';
 
 // Pages
 
 // Themes
-@import 'themes/main.scss';
+@import 'themes/main';
