@@ -18,6 +18,7 @@ import { TaskComponent } from './shared/components/tasks/task/task.component';
 import { TasksComponent } from './shared/components/tasks/tasks.component';
 import { ModalModule } from './shared/components/modal';
 import { CreateModalComponent } from './shared/components/tasks/create-modal/create-modal.component';
+import { ViewTaskComponent } from './shared/components/tasks/view-task/view-task.component';
 
 @NgModule({
   declarations: [
@@ -32,6 +33,7 @@ import { CreateModalComponent } from './shared/components/tasks/create-modal/cre
     TaskComponent,
     TasksComponent,
     CreateModalComponent,
+    ViewTaskComponent,
   ],
   imports: [
     BrowserModule,
@@ -40,6 +42,9 @@ import { CreateModalComponent } from './shared/components/tasks/create-modal/cre
     ReactiveFormsModule,
     FormsModule,
     ModalModule
+  ],
+  entryComponents: [
+    ViewTaskComponent
   ],
   providers: [
     {

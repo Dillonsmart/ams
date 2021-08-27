@@ -16,4 +16,8 @@ export class TaskServiceService {
     return this.http.post('http://ams-api.local/api/tasks/create', task);
   }
 
+  getTask(task: number) {
+    return this.http.get('http://ams-api.local/api/tasks/view/' + task);
+  }
+
 }
