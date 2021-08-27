@@ -28,7 +28,6 @@ export class ListComponent implements OnInit {
     this.listService.getList(this.listId).subscribe(
       result => {
         this.list = result;
-        console.log(this.list);
       },
       error => {
         

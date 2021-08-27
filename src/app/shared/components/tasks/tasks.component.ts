@@ -14,12 +14,22 @@ export class TasksComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
-    console.log(this.tasks);
+
   }
 
   public openNewTaskModal()
   {
     this.child.openModal('createNewTaskModal');
+  }
+
+  /**
+   * New task being passed for child component
+   * Adds the task to the tasks array
+   */
+  public handleNewTask($event)
+  {
+    // append the new task
+    this.tasks.push($event);
   }
 
 }
