@@ -29,7 +29,7 @@ export class TasksComponent implements OnInit {
   public handleNewTask($event)
   {
     // append the new task
-    this.tasks.push($event);
+    this.tasks.unshift($event);
   }
 
 }
