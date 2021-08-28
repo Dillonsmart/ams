@@ -1,6 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { ListServiceService } from "../../services/lists/list-service.service";
 import {Router} from '@angular/router';
+import { CreateListComponent } from './create-list/create-list.component';
 
 @Component({
   selector: 'app-lists',
@@ -11,6 +12,8 @@ export class ListsComponent implements OnInit {
 
   lists:object[] = []
 
+  @ViewChild(CreateListComponent) child:CreateListComponent;
+
   constructor(private listService: ListServiceService, private router: Router) 
   { 
 
@@ -18,6 +21,11 @@ export class ListsComponent implements OnInit {
 
   ngOnInit(): void {
     this.getUserLists();
+  }
+
+  public openNewListModal()
+  {
+    this.child.openModal('createNewListModal');
   }
 
   /**

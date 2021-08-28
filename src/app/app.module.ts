@@ -19,6 +19,7 @@ import { TasksComponent } from './shared/components/tasks/tasks.component';
 import { ModalModule } from './shared/components/modal';
 import { CreateModalComponent } from './shared/components/tasks/create-modal/create-modal.component';
 import { ViewTaskComponent } from './shared/components/tasks/view-task/view-task.component';
+import { CreateListComponent } from './shared/components/lists/create-list/create-list.component';
 
 @NgModule({
   declarations: [
@@ -34,6 +35,7 @@ import { ViewTaskComponent } from './shared/components/tasks/view-task/view-task
     TasksComponent,
     CreateModalComponent,
     ViewTaskComponent,
+    CreateListComponent,
   ],
   imports: [
     BrowserModule,

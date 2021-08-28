@@ -19,4 +19,8 @@ export class ListServiceService {
     return this.http.get('http://ams-api.local/api/lists/' + id);
   }
 
+  createList(list: object) {
+    return this.http.post('http://ams-api.local/api/lists/create', list);
+  }
+
 }

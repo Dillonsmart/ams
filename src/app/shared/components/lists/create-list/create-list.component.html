@@ -1,0 +1,9 @@
+<jw-modal id="createNewListModal">
+    <div class="form-group">
+        <input type="text" #lName placeholder="List name" [(ngModel)]="listName" tabindex="1"/>
+    </div>
+    <div class="foot text-end">
+        <button (click)="createList();" class="save" tabindex="3">Create List</button>
+        <button (click)="closeModal();" class="cancel" tabindex="4">Cancel</button>
+    </div>
+</jw-modal>
