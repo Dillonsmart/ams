@@ -16,7 +16,7 @@ export class ListServiceService {
   }
 
   getList(id: number): Observable<any> {
-    return this.http.get('http://ams-api.local/api/lists/' + id);
+    return this.http.get('http://ams-api.local/api/lists/view/' + id);
   }
 
   createList(list: object) {
