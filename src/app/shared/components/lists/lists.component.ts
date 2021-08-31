@@ -57,4 +57,15 @@ export class ListsComponent implements OnInit {
     return this.router.navigateByUrl('/list/' + id);
   }
 
+  /**
+   * Handle emitted event
+   * New list created. Add new list to lists array at the begining
+   * @param $event 
+   */
+  public handleNewList($event)
+  {
+    console.log($event);
+    this.lists.unshift($event);
+  }
+
 }

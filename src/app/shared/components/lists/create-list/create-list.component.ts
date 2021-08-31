@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
+import { Component, OnInit, ViewChild, ElementRef, Output, EventEmitter } from '@angular/core';
 import { ModalService } from '../../modal';
 import { ListServiceService } from "../../../services/lists/list-service.service";
 
@@ -13,6 +13,7 @@ export class CreateListComponent implements OnInit {
   createModalId: string = 'createNewListModal';
 
   @ViewChild('lName') lname: ElementRef;
+  @Output() incommingList: EventEmitter<string> = new EventEmitter();
 
   constructor(private modalService: ModalService, private listService: ListServiceService) { }
 
@@ -38,11 +39,10 @@ export class CreateListComponent implements OnInit {
     // send the data to the task service and handle the response
     this.listService.createList(list).subscribe(
       result => {
-        console.log(result);
-        // if(result.status_code == 201) {
-        //   // pass the task object back to the parent component 
-        //   // this.incommingTask.emit(result.task);
-        // }
+        if(result['status_code'] == 201) {
+          // pass the task object back to the parent component 
+          this.incommingList.emit(result['data']);
+        }
       },
       error => {
         alert('There was an error creating the list');
