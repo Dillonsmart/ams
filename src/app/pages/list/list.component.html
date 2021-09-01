@@ -1,6 +1,6 @@
 <ams-header></ams-header>
 <div class="d-flex">
-    <app-ams-sidebar></app-ams-sidebar>
+    <app-ams-sidebar #sidebar></app-ams-sidebar>
     <main id="content" class="d-flex justify-content-center">
         <div class="content-wrapper">
             <div class="d-flex justify-content-between">
@@ -17,7 +17,7 @@
                 </div>
             </div>
             
-            <app-tasks [tasks]="list['tasks']"></app-tasks>
+            <app-tasks (newTaskCreated)="sidebar.update()" [tasks]="list['tasks']"></app-tasks>
             
         </div>
     </main>

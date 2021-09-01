@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
+import { ListsComponent } from '../lists/lists.component';
 
 @Component({
   selector: 'app-ams-sidebar',
@@ -7,9 +8,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AmsSidebarComponent implements OnInit {
 
+  @ViewChild('sidebar') sidebar: ElementRef;
+  @ViewChild('lists') child: ListsComponent;
+
   constructor() { }
 
   ngOnInit(): void {
+  }
+
+  public update()
+  {
+    this.child.getUserLists();
   }
 
 }

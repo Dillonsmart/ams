@@ -2,7 +2,7 @@
     <div class="inline-block task--complete-check"></div>
     <div class="inline-block task--content flex-fill">
         <p class="name">{{task.name}}</p>
-        <p class="description">{{ (task.description.length > 100)? (task.description | slice:0:100)+'..':(task.description) }}</p>
+        <p class="description" *ngIf="task.description">{{ (task.description.length > 100)? (task.description | slice:0:100)+'..':(task.description) }}</p>
     </div>
     <div class="inline-block task--options text-end flex-fill">
         <button class="opt-btn">

@@ -1,4 +1,4 @@
-import { Component, OnInit, Input, ViewChild } from '@angular/core';
+import { Component, OnInit, Input, ViewChild, EventEmitter, Output } from '@angular/core';
 import { CreateModalComponent } from './create-modal/create-modal.component';
 
 @Component({
@@ -10,6 +10,7 @@ export class TasksComponent implements OnInit {
 
   @Input() tasks = null;
   @ViewChild(CreateModalComponent) child:CreateModalComponent;
+  @Output() newTaskCreated: EventEmitter<string> = new EventEmitter();
 
   constructor() { }
 
@@ -30,6 +31,7 @@ export class TasksComponent implements OnInit {
   {
     // append the new task
     this.tasks.unshift($event);
+    this.newTaskCreated.emit();
   }
 
 }
