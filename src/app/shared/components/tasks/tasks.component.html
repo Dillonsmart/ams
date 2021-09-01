@@ -5,9 +5,6 @@
     <li *ngFor="let task of tasks">
         <app-task [task]="task"></app-task>
     </li>
-    <div class="text-center add-section">
-        <span>Add Task</span>
-    </div>
 </ul>
 
 <app-create-modal (incommingTask)="handleNewTask($event)"></app-create-modal>
