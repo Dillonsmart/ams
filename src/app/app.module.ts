@@ -20,7 +20,6 @@ import { ModalModule } from './shared/components/modal';
 import { CreateModalComponent } from './shared/components/tasks/create-modal/create-modal.component';
 import { ViewTaskComponent } from './shared/components/tasks/view-task/view-task.component';
 import { CreateListComponent } from './shared/components/lists/create-list/create-list.component';
-import { InboxComponent } from './pages/inbox/inbox.component';
 
 @NgModule({
   declarations: [
@@ -37,7 +36,6 @@ import { InboxComponent } from './pages/inbox/inbox.component';
     CreateModalComponent,
     ViewTaskComponent,
     CreateListComponent,
-    InboxComponent,
   ],
   imports: [
     BrowserModule,
