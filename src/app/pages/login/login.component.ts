@@ -47,6 +47,7 @@ export class LoginComponent implements OnInit {
 
   // Handle response
   responseHandler(data: any){
+    console.log(data);
     this.token.handleData(data.access_token);
   }
 
