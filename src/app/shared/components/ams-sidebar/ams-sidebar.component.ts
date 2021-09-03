@@ -24,7 +24,6 @@ export class AmsSidebarComponent implements OnInit {
 
   public openInbox()
   {
-    console.log('sdf');
     return this.router.navigateByUrl('inbox');
   }
 
