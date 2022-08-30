@@ -1,10 +1,10 @@
-<div class="d-flex p-1" (click)="viewTask(task.id)">
-    <div class="inline-block task--complete-check"></div>
-    <div class="inline-block task--content flex-fill">
-        <p class="name">{{task.name}}</p>
-        <p class="description" *ngIf="task.description">{{ (task.description.length > 100)? (task.description | slice:0:100)+'..':(task.description) }}</p>
+<div class="flex p-4 border-b border-gray-200" (click)="viewTask(task.id)">
+    <div class="h-5 w-5 rounded-full border border-gray-500 hover:bg-gray-100 cursor-pointer"></div>
+    <div class="flex-1 px-4 inline-block task--content flex-fill">
+        <p class="leading-none mb-1">{{task.name}}</p>
+        <p class="text-sm text-gray-500 text-light" *ngIf="task.description">{{ (task.description.length > 100)? (task.description | slice:0:100)+'..':(task.description) }}</p>
     </div>
-    <div class="inline-block task--options text-end flex-fill">
+    <div>
         <button class="opt-btn">
             <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 0 24 24" width="24px" fill="#000000"><path d="M0 0h24v24H0V0z" fill="none"/><path d="M6 10c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm12 0c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm-6 0c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2z"/></svg>
         </button>
