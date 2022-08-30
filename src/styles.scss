@@ -1,1 +1,5 @@
-@import 'assets/sass/styles.scss'
+@import 'assets/sass/styles.scss';
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
