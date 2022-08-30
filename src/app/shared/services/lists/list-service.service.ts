@@ -1,26 +1,27 @@
-import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs';
-import { HttpClient } from '@angular/common/http';
+import {Injectable} from '@angular/core';
+import {Observable} from 'rxjs';
+import {BaseService} from "../base.service";
+import {HttpClient} from "@angular/common/http";
 
 @Injectable({
-  providedIn: 'root'
+    providedIn: 'root'
 })
-export class ListServiceService {
+export class ListServiceService extends BaseService {
 
-  constructor(private http: HttpClient) {
+    constructor(private http: HttpClient) {
+        super();
+    }
 
-  }
+    userLists(): Observable<any> {
+        return this.http.get(this.baseUrl + '/lists');
+    }
 
-  userLists(): Observable<any> {
-    return this.http.get('http://ams-api.local/api/lists');
-  }
+    getList(id: number): Observable<any> {
+        return this.http.get(this.baseUrl + '/lists/view/' + id);
+    }
 
-  getList(id: number): Observable<any> {
-    return this.http.get('http://ams-api.local/api/lists/view/' + id);
-  }
-
-  createList(list: object) {
-    return this.http.post('http://ams-api.local/api/lists/create', list);
-  }
+    createList(list: object) {
+        return this.http.post(this.baseUrl + '/lists/create', list);
+    }
 
 }

@@ -1,39 +1,40 @@
-import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs';
-import { HttpClient } from '@angular/common/http';
-
+import {Injectable} from '@angular/core';
+import {Observable} from 'rxjs';
+import {BaseService} from "./base.service";
+import {HttpClient} from "@angular/common/http";
 
 @Injectable({
-  providedIn: 'root'
+    providedIn: 'root'
 })
 
-export class AuthService {
+export class AuthService extends BaseService {
 
-  constructor(private http: HttpClient) {
+    constructor(private http: HttpClient) {
+        super();
+    }
 
-  }
+    // User registration
+    register(user: User): Observable<any> {
+        return this.http.post(this.baseUrl + '/login', user);
+    }
 
-  // User registration
-  register(user: User): Observable<any> {
-    return this.http.post('http://ams-api.test/api/login', user);
-  }
+    // Login
+    signin(user: User): Observable<any> {
+        console.log(this.baseUrl);
+        return this.http.post<any>(this.baseUrl + '/login', user);
+    }
 
-  // Login
-  signin(user: User): Observable<any> {
-    return this.http.post<any>('http://ams-api.test/api/login', user);
-  }
-
-  // Access user profile
-  profileUser(): Observable<any> {
-    return this.http.get('http://ams-api.test/api/user');
-  }
+    // Access user profile
+    profileUser(): Observable<any> {
+        return this.http.get(this.baseUrl + '/user');
+    }
 
 }
 
 // User interface
 export class User {
-  name: String;
-  email: String;
-  password: String;
-  password_confirmation: String
+    name: String;
+    email: String;
+    password: String;
+    password_confirmation: String
 }
