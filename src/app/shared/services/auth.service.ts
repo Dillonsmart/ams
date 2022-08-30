@@ -15,17 +15,17 @@ export class AuthService {
 
   // User registration
   register(user: User): Observable<any> {
-    return this.http.post('http://ams-api.local/api/login', user);
+    return this.http.post('http://ams-api.test/api/login', user);
   }
 
   // Login
   signin(user: User): Observable<any> {
-    return this.http.post<any>('http://ams-api.local/api/login', user);
+    return this.http.post<any>('http://ams-api.test/api/login', user);
   }
 
   // Access user profile
   profileUser(): Observable<any> {
-    return this.http.get('http://ams-api.local/api/user');
+    return this.http.get('http://ams-api.test/api/user');
   }
 
 }
